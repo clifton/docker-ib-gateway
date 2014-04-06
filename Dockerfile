@@ -1,4 +1,4 @@
-FROM clifton/clojure-base
+FROM clifton/debian-java8-clojure
 MAINTAINER clifton <cliftonk@gmail.com>
 
 # install xvfb and other X dependencies for IB
