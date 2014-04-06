@@ -1,0 +1,7 @@
+*.un~
+*.cache
+Thumbs.db
+Desktop.ini
+._*
+*~
+.*.sw*

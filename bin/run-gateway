@@ -1,0 +1,5 @@
+#!/bin/bash
+cd /ib-gateway
+xvfb-daemon-run \
+  java -cp jts.jar:total.2013.jar -Dsun.java2d.noddraw=true -Xmx128M \
+  ibgateway.GWClient .
