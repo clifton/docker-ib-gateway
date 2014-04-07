@@ -1,9 +1,10 @@
-FROM clifton/debian-java8-clojure
+FROM clifton/oracle-java8
 MAINTAINER clifton <cliftonk@gmail.com>
 
 # install xvfb and other X dependencies for IB
 RUN apt-get update -y
 RUN apt-get install -y xvfb libxrender1 libxtst6 x11vnc
+RUN apt-get clean
 
 # download and install the IB-gateway
 RUN curl -O http://download2.interactivebrokers.com/download/unixmacosx.jar \
