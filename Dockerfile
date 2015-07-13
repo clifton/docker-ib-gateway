@@ -3,7 +3,7 @@ MAINTAINER clifton <cliftonk@gmail.com>
 
 # install xvfb and other X dependencies for IB
 RUN apt-get update -y \
-    && apt-get install -y xvfb libxrender1 libxtst6 x11vnc \
+    && apt-get install -y xvfb libxrender1 libxtst6 x11vnc socat \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
 
@@ -25,8 +25,9 @@ ADD bin/run-gateway /usr/bin/run-gateway
 # set your own password to launch vnc
 # ENV VNC_PASSWORD doughnuts
 
-# 5900 for VNC, 4001 for the gateway API
-EXPOSE 5900 4001
+# 5900 for VNC, 4003 for the gateway API via socat
+EXPOSE 5900 4003
+VOLUME /ib-gateway
 
 ENV DISPLAY :0
 

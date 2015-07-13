@@ -1,5 +1,6 @@
 #!/bin/bash
 cd /ib-gateway
+socat TCP-LISTEN:4003,fork TCP:0.0.0.0:4001&
 xvfb-daemon-run \
   java -cp jts.jar:total.jar \
   -Dsun.java2d.noddraw=true \
