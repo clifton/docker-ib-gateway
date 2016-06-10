@@ -1,8 +1,11 @@
-FROM orgsync/java8
+FROM java:8
 MAINTAINER clifton <cliftonk@gmail.com>
 
 # install xvfb and other X dependencies for IB
-RUN apt-get update -y \
+RUN apt-get clean \
+    && rm -rf /var/lib/apt/lists/* \
+    && apt-get clean \
+    && apt-get update -y \
     && apt-get install -y xvfb libxrender1 libxtst6 x11vnc socat \
     && rm -rf /var/lib/apt/lists/* \
     && apt-get clean
@@ -11,8 +14,11 @@ RUN mkdir /ib-gateway
 WORKDIR /ib-gateway
 
 # download and install the IB-gateway
-RUN wget -O total.jar -q https://download2.interactivebrokers.com/java/classes/total.2015.jar \
-    && wget -O jts.jar -q https://download2.interactivebrokers.com/java/classes/latest/jts.latest.jar
+RUN  wget -O jts4launch.jar -q http://{DOMAIN}/jars/jts4launch.jar \
+ && wget -O log4j-1.2.17.jar -q http://{DOMAIN}/jars/log4j-1.2.17.jar \
+ && wget -O total.jar -q http://{DOMAIN}/jars/total.jar \
+ && wget -O twslaunch-install4j-1.5.jar -q https://{DOMAIN}/jars/twslaunch-install4j-1.5.jar \
+ && wget -O twslaunch.jar -q http://{DOMAIN}/jars/twslaunch.jar
 
 # install init scripts and binaries
 ADD config/jts.ini /ib-gateway/jts.ini

@@ -2,7 +2,7 @@
 cd /ib-gateway
 socat TCP-LISTEN:4003,fork TCP:0.0.0.0:4001&
 xvfb-daemon-run \
-  java -cp jts.jar:total.jar \
+  java -cp total.jar:log4j-1.2.17.jar:twslaunch-install4j-1.5.jar:twslaunch.jar:jts4launch.jar \
   -Dsun.java2d.noddraw=true \
   -Dswing.boldMetal=false \
   -Dsun.locale.formatasdefault=true -Xmx512M \
