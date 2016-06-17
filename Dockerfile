@@ -14,11 +14,10 @@ RUN mkdir /ib-gateway
 WORKDIR /ib-gateway
 
 # download and install the IB-gateway
-RUN  wget -O jts4launch.jar -q http://{DOMAIN}/jars/jts4launch.jar \
- && wget -O log4j-1.2.17.jar -q http://{DOMAIN}/jars/log4j-1.2.17.jar \
- && wget -O total.jar -q http://{DOMAIN}/jars/total.jar \
- && wget -O twslaunch-install4j-1.5.jar -q https://{DOMAIN}/jars/twslaunch-install4j-1.5.jar \
- && wget -O twslaunch.jar -q http://{DOMAIN}/jars/twslaunch.jar
+RUN  wget -O jts4launch.jar -q https://www.interactivebrokers.com/java/classes/jts4launch.jar \
+ && wget -O log4j-1.2.17.jar -q https://www.interactivebrokers.com/java/classes/log4j-1.2.17.jar \
+ && wget -O total.jar -q https://www.interactivebrokers.com/java/classes/total.jar \
+ && wget -O twslaunch.jar -q https://www.interactivebrokers.com/java/classes/twslaunch.jar
 
 # install init scripts and binaries
 ADD config/jts.ini /ib-gateway/jts.ini
