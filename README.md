@@ -2,6 +2,10 @@
 
 Docker container that launches the Interactive Brokers Gateway GUI inside of an X virtual frame buffer.
 
+## FIXME: I'm broken
+
+[https://github.com/clifton/docker-ib-gateway/issues/4](There's a conflict with IB provided jar files.)
+
 ## Usage
 
     docker pull clifton/ib-gateway
