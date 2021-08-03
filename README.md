@@ -4,7 +4,9 @@ Docker container that launches the Interactive Brokers Gateway GUI inside of an 
 
 ## FIXME: I'm broken
 
-[https://github.com/clifton/docker-ib-gateway/issues/4](There's a conflict with IB provided jar files.)
+[Issue](https://github.com/clifton/docker-ib-gateway/issues/4) - There's a conflict with IB provided jar files.
+
+This is no longer maintained. Happy to accept contributors or feel free to fork away!
 
 ## Usage
 
